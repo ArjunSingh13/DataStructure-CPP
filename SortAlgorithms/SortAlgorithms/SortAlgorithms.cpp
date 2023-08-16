@@ -33,6 +33,16 @@ void bubbleSort(int arr[], int size) {
 }
 
 /**
+ * Steps for Merge Sort:
+ * 1. Merge Sort works on divide and conquer.
+ * 2. We use two functions main function and a helper function.
+ * 3. Helper function merge two sorted arrays. It needs array, leftIndex, midIndex, rightIndex as arguments.
+ * 4. arguments needed by helper function are passed by mergeSort function.
+ * 5. mergeSort function need array, left and right index as 3 arguments.
+ * 6. when doing merge on two sorted arrays: midIndex is counted in left array and rightarray starts from midIndex+1.
+*/
+
+/**
 *   Helper function for Merge Sort :
 *   this function can sort two array that are already sorted.
 *   Both arrays are subarrays in a big array. so big array's
@@ -49,9 +59,10 @@ void merge(int array[], int leftIndex, int midIndex, int rightIndex) {
     int leftArraySize = midIndex - leftIndex + 1;
     int rightArraySize = rightIndex - midIndex;
 
-    // create two dynamic arrays - left and right  
-    int* leftArray = new int[leftArraySize];
-    int* rightArray = new int[rightArraySize];
+    // create two dynamic arrays - left and right   
+    // unique_ptr<int[]> replaced by auto
+    auto leftArray = make_unique<int[]>(leftArraySize);
+    auto rightArray = make_unique<int[]>(rightArraySize);
 
     // load left dynamic array
     for (int i = 0; i < leftArraySize; i++) {
@@ -91,9 +102,6 @@ void merge(int array[], int leftIndex, int midIndex, int rightIndex) {
         index++;
         j++;
     }
-
-    delete[] leftArray;
-    delete[] rightArray;
 }
 
 
@@ -116,6 +124,7 @@ void merge(int array[], int leftIndex, int midIndex, int rightIndex) {
 void mergeSort(int arr[], int leftIndex, int rightIndex) {
     if (leftIndex >= rightIndex) return;
 
+    // here leftIndex is added only because what if leftIndex is not zero then calculations wont be correct.
     int midIndex = leftIndex + (rightIndex - leftIndex) / 2;
 
     mergeSort(arr, leftIndex, midIndex);
