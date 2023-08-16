@@ -1,0 +1,4 @@
+﻿  HashTables.cpp
+C:\Work\Projects\CPP\DataStructures\HashTables\HashTables\HashTables.cpp(73,27): warning C4018: '<': signed/unsigned mismatch
+C:\Work\Projects\CPP\DataStructures\HashTables\HashTables\HashTables.cpp(184): warning C4715: 'hashTable::sumOfTwo': not all control paths return a value
+  HashTables.vcxproj -> C:\Work\Projects\CPP\DataStructures\HashTables\Debug\HashTables.exe

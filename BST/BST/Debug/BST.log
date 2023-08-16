@@ -1,0 +1,3 @@
+﻿  BST.cpp
+C:\Work\Projects\CPP\DataStructures\BST\BST\BST.cpp(82): warning C4715: 'BST::insert': not all control paths return a value
+  BST.vcxproj -> C:\Work\Projects\CPP\DataStructures\BST\Debug\BST.exe
